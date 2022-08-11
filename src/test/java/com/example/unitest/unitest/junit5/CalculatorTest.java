@@ -2,6 +2,7 @@ package com.example.unitest.unitest.junit5;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -109,5 +110,11 @@ class CalculatorTest {
     @Test
     void dividedInvalidInputExpectedExceptionTest(){
         assertThrows(ArithmeticException.class, ()-> calculator.dividedByZero(2,0), "No se puede dividir entre cero");
+    }
+
+    @Disabled("Disabled until bug 23 be resolved")
+    @Test
+    void dividedInvalidInputTest(){
+        assertEquals(2,calculator.divided(5,0));
     }
 }
