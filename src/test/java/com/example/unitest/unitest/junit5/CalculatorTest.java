@@ -1,9 +1,6 @@
 package com.example.unitest.unitest.junit5;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -116,5 +113,11 @@ class CalculatorTest {
     @Test
     void dividedInvalidInputTest(){
         assertEquals(2,calculator.divided(5,0));
+    }
+
+    @Test
+    @DisplayName("Método divided --> funciona")
+    void dividedValidInputValidExpectedNameTest(){
+        assertEquals(2, calculator.divided(10,5));
     }
 }
