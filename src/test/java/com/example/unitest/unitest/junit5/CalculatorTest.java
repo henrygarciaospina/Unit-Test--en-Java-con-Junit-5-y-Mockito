@@ -93,4 +93,15 @@ class CalculatorTest {
     void subtractValidInputValidExpectedTest(){
         assertEquals(11, calculator.subtract(15,4));
     }
+
+    @Test
+    void dividedValidInputValidExpectedTest(){
+        assertEquals(2, calculator.divided(10,5));
+    }
+
+    @Test
+    void dividedInvalidInputTest(){
+        fail("Fallo detectado manualmente - No se puede dividir entre cero");
+        calculator.divided(10,0);
+    }
 }
