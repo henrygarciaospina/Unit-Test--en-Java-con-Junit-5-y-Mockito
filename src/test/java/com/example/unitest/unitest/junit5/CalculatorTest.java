@@ -59,7 +59,7 @@ class CalculatorTest {
 
     // Debería ir un solo assert en la prueba
     @Test
-    void assertTypesTest(){
+    void assertTypesTest() {
         assertTrue(1 == 1);
 //      assertTrue(1 == 2);
 
@@ -80,6 +80,17 @@ class CalculatorTest {
 
         //0.5 es la cantidad de diferencia permitida entre lo actual y lo esperado
         assertEquals(1, 1.4, 0.5);
-        assertEquals(1, 1.6, 0.5, "La diferencia entre el valor actual y el esperado supera el valor de tolerancia 0.5");
+        //assertEquals(1, 1.6, 0.5, "La diferencia entre el valor actual y el esperado supera el valor de tolerancia 0.5");
+
+    }
+
+    @Test
+    void addValidInputValidExpectedTest(){
+        assertEquals(11, calculator.add(7,4));
+    }
+
+    @Test
+    void subtractValidInputValidExpectedTest(){
+        assertEquals(11, calculator.subtract(15,4));
     }
 }
