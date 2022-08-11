@@ -120,4 +120,14 @@ class CalculatorTest {
     void dividedValidInputValidExpectedNameTest(){
         assertEquals(2, calculator.divided(10,5));
     }
+
+    @Test
+    void addAssertAllTest(){
+       assertAll(
+               ()-> assertEquals(31, calculator.add(11,20)),
+               ()-> assertEquals(20, calculator.subtract(20,10)),
+               ()-> assertEquals(5, calculator.divided(45,9))
+       );
+    }
+
 }
