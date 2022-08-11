@@ -99,9 +99,15 @@ class CalculatorTest {
         assertEquals(2, calculator.divided(10,5));
     }
 
+/*
     @Test
     void dividedInvalidInputTest(){
         fail("Fallo detectado manualmente - No se puede dividir entre cero");
         calculator.divided(10,0);
+    }
+*/
+    @Test
+    void dividedInvalidInputExpectedExceptionTest(){
+        assertThrows(ArithmeticException.class, ()-> calculator.dividedByZero(2,0), "No se puede dividir entre cero");
     }
 }
